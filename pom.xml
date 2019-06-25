@@ -29,7 +29,7 @@
 		</dependency>
 	
 	</dependencies>
-	<distributionManagement>
+	<!-- <scope>provided</scope> <distributionManagement>
 		 <snapshotRepository>
 		    <id>nexus</id>
 		    <url>http://13.233.125.37:8081/repository/maven-snapshots/</url>
@@ -39,7 +39,7 @@
 		    <id>nexus</id>
 		    <url>http://13.233.125.37:8081/repository/maven-releases/</url>
 		</repository>
-  	</distributionManagement>
+  	</distributionManagement> -->
 	
 <build>
     <plugins>
