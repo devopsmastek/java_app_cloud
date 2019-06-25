@@ -3,7 +3,7 @@ node
    def mvnHome
    stage('scm checkout') { 
       
-      git 'https://github.com/devopsmastek/Java_app.git'
+      git 'https://github.com/devopsmastek/java_app_cloud.git'
                 
       
    }
