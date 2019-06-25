@@ -13,7 +13,7 @@ node
       sh "${MVNCMD} clean package"
       }
    
-   stage ('deploy)
+   stage ('deploy')
           {
    sshagent(['tomcat-ssh']) {
     sh 'scp -o StrickHostKeyChecking=no target/*.war ubuntu@13.232.244.198:/var/lib/tomcat8/webapps/'
