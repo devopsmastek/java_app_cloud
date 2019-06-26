@@ -12,13 +12,16 @@ node
      def MVNCMD = "${MVN_HOME}/bin/mvn"
       sh "${MVNCMD} clean package"
       }
+      
+      stage('Publish') 
+      {
+    nexusPublisher nexusInstanceId: '1', nexusRepositoryId: '1', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: '/var/lib/jenkins/workspace/java_app_cloud/target/myweb-0.0.5.war']], mavenCoordinate: [artifactId: 'myweb-0.0.5.war', groupId: 'myweb', packaging: '', version: '1']]]
+   }
    
    stage ('deploy')
           {
   
     sh "cp /var/lib/jenkins/workspace/java_app_cloud/target/myweb-0.0.5.war /var/lib/tomcat8/webapps"
       
-              
-          
-         }
+               }
 }
