@@ -10,8 +10,8 @@ node
    stage('Build') {
      def MVN_HOME = tool name: 'MAVEN', type: 'maven'
      def MVNCMD = "${MVN_HOME}/bin/mvn"
-     sh 'mvn clean package sonar:sonar -Dsonar.host.url=http://13.233.63.29:9000/ '
-      sh "${MVNCMD} clean package"
+     sh '"${MVNCMD} clean package sonar:sonar -Dsonar.host.url=http://13.233.63.29:9000/ '
+      
       }
 
       
