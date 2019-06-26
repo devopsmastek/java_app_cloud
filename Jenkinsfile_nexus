@@ -15,7 +15,7 @@ node
       
       stage('Publish') 
       {
-    nexusPublisher nexusInstanceId: '1', nexusRepositoryId: '1', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: '/var/lib/jenkins/workspace/java_app_cloud_nexus']], mavenCoordinate: [artifactId: 'myweb-0.0.5.war', groupId: 'myweb', packaging: '', version: '1']]]
+    nexusPublisher nexusInstanceId: '1', nexusRepositoryId: '1', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: '/var/lib/jenkins/workspace/java_app_cloud_nexus/target']], mavenCoordinate: [artifactId: 'myweb-0.0.5.war', groupId: 'myweb', packaging: '', version: '1']]]
    }
    
    stage ('deploy')
