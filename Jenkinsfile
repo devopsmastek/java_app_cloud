@@ -17,6 +17,7 @@ node
           {
    sshagent(['tomcat-ssh']) {
     sh "cp /var/lib/jenkins/workspace/Java_app/target/*.war /var/lib/tomcat8/webapps"
+      
               }
           
          }
