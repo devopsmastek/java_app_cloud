@@ -16,7 +16,7 @@ node
    stage ('deploy')
           {
   
-    sh "cp /var/lib/jenkins/workspace/Java_app_cloud/target/*.war /var/lib/tomcat8/webapps"
+    sh "cp /target/*.war /var/lib/tomcat8/webapps"
       
               
           
