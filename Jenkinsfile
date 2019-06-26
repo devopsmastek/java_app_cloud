@@ -16,7 +16,7 @@ node
    stage ('deploy')
           {
    sshagent(['tomcat-ssh']) {
-    sh 'scp -o StrickHostKeyChecking=no target/*.war ubuntu@13.232.244.198:/var/lib/tomcat8/webapps/'
+    sh "cp /var/lib/jenkins/workspace/Java_app/target/*.war /var/lib/tomcat8/webapps"
               }
           
          }
