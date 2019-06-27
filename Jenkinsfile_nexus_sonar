@@ -15,6 +15,8 @@ node
       }
 
      stage('SonarQube Analysis') {
+          def MVN_HOME = tool name: 'MAVEN', type: 'maven'
+          def MVNCMD = "${MVN_HOME}/bin/mvn"
         
           sh "${MVN_HOME}/bin/mvn sonar:sonar"
         
