@@ -22,6 +22,16 @@ node
     }
       
       
+      stage("Quality Gate Status Check"){
+          timeout(time: 1, unit: 'HOURS') {
+              def qg = waitForQualityGate()
+              if (qg.status != 'OK') {
+                 
+                  error "Pipeline aborted due to quality gate failure: ${qg.status}"
+              }
+          }
+      }    
+      
       stage('Publish') 
       {
       nexusPublisher nexusInstanceId: '1', nexusRepositoryId: '1', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: '/var/lib/jenkins/workspace/java_app_cloud/target/myweb-0.0.5.war']], mavenCoordinate: [artifactId: 'myweb-0.0.5', groupId: 'myweb', packaging: 'war', version: '1']]]
