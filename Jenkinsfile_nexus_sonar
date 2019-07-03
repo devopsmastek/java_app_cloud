@@ -66,6 +66,7 @@ node
 		   def NEXUS_URL = "13.234.120.40:9999"
 		   def NEXUS_REPOSITORY = "java_app"
 		   def NEXUS_CREDENTIAL_ID = "nexus"
+		   NEXUS_CREDENTIAL_ID = "nexus"
 		   echo " akshay path is : $artifactPath"
                     if(artifactExists) {
                         echo "*** File: ${artifactPath}, group: ${pom.groupId}, packaging: ${pom.packaging}, version ${pom.version}";
