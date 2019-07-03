@@ -1,5 +1,11 @@
 node 
 {   
+
+    
+     environment {
+     source = /var/lib/jenkins/workspace/java_app_cloud_sonar/target/myweb-1${env.BUILD_NUMBER}
+     destination = /var/lib/tomcat8/webapps
+                 }
    def mvnHome
    stage('scm checkout') { 
       
@@ -37,10 +43,6 @@ node
    stage ('deploy')
           {
           
-     environment {
-    source = /var/lib/jenkins/workspace/java_app_cloud_sonar/target/myweb-1${env.BUILD_NUMBER}
-    destination = /var/lib/tomcat8/webapps
-                 }
   
     sh "cp ${source} ${destination} "
       
