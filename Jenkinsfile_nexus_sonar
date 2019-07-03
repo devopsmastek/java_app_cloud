@@ -1,5 +1,5 @@
 node 
-{
+{   
    def mvnHome
    stage('scm checkout') { 
       
@@ -32,16 +32,17 @@ node
           }
       }    
       
-      stage('Publish') 
-      {
-      
-      nexusPublisher nexusInstanceId: '1', nexusRepositoryId: '1', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: '/var/lib/jenkins/workspace/java_app_cloud/target/*']], mavenCoordinate: [artifactId: '*', groupId: 'org', packaging: 'war', version: '1']]]
-   }
+     
    
    stage ('deploy')
           {
+          
+     environment {
+    source = /var/lib/jenkins/workspace/java_app_cloud_sonar/target/myweb-1${env.BUILD_NUMBER}
+    destination = /var/lib/tomcat8/webapps
+                 }
   
-    sh "cp /var/lib/jenkins/workspace/java_app_cloud_sonar/target/myweb-1${env.BUILD_NUMBER} /var/lib/tomcat8/webapps"
+    sh "cp ${source} ${destination} "
       
-               }
+        }
 }
