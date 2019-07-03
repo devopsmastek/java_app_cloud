@@ -34,6 +34,13 @@ node
           }
       }    
       
+      stage('Publish') 
+      {
+	  
+	  def source = "/var/lib/jenkins/workspace/java_app_cloud_sonar/target/myweb-1.${env.BUILD_NUMBER}"
+	  def artiid = "myweb--1.${env.BUILD_NUMBER}"
+      nexusPublisher nexusInstanceId: '1', nexusRepositoryId: '1', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: '${source}']], mavenCoordinate: [artifactId: '$"{artiid}', groupId: 'myweb', packaging: 'war', version: '1']]]
+	  }
      
    
    stage ('deploy')
