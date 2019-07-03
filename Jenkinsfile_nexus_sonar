@@ -40,8 +40,8 @@ node
           {
           
     def source = "/var/lib/jenkins/workspace/java_app_cloud_sonar/target/myweb-1.${env.BUILD_NUMBER}"
-    def  destination = "/var/lib/tomcat8/webapps"
-    sh "cp ${source} ${destination} "
+    def  destination = "/var/lib/tomcat8/webapps/"
+    sh "cp -r ${source} ${destination} "
       
         }
 }
