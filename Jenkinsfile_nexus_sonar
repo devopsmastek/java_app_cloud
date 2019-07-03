@@ -1,18 +1,6 @@
 node 
 {   
 
- environment {
-        // This can be nexus3 or nexus2
-        NEXUS_VERSION = "nexus3"
-        // This can be http or https
-        NEXUS_PROTOCOL = "http"
-        // Where your Nexus is running
-        NEXUS_URL = "http://13.234.120.40:9999"
-        // Repository where we will upload the artifact
-        NEXUS_REPOSITORY = "java_app"
-        // Jenkins credential id to authenticate to Nexus OSS
-        NEXUS_CREDENTIAL_ID = "nexus"
-	}
 
                  
    def mvnHome
@@ -49,6 +37,20 @@ node
       
       stage("publish to nexus") {
             steps {
+	    
+	         
+ environment {
+        // This can be nexus3 or nexus2
+        NEXUS_VERSION = "nexus3"
+        // This can be http or https
+        NEXUS_PROTOCOL = "http"
+        // Where your Nexus is running
+        NEXUS_URL = "http://13.234.120.40:9999"
+        // Repository where we will upload the artifact
+        NEXUS_REPOSITORY = "java_app"
+        // Jenkins credential id to authenticate to Nexus OSS
+        NEXUS_CREDENTIAL_ID = "nexus"
+	}
                 script {
                     // Read POM xml file using 'readMavenPom' step , this step 'readMavenPom' is included in: https://plugins.jenkins.io/pipeline-utility-steps
                     pom = readMavenPom file: "pom.xml";
