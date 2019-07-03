@@ -35,7 +35,7 @@ node
       stage('Publish') 
       {
       
-      nexusPublisher nexusInstanceId: '1', nexusRepositoryId: '1', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: '/var/lib/jenkins/workspace/java_app_cloud_sonar/target/myweb-1.${env.BUILD_NUMBER}']], mavenCoordinate: [artifactId: 'myweb-1.${env.BUILD_NUMBER}', groupId: 'org.java', packaging: 'war', version: '1']], [$class: 'MavenPackage', mavenAssetList: [], mavenCoordinate: [artifactId: '', groupId: '', packaging: '', version: '']]]
+      nexusPublisher nexusInstanceId: '1', nexusRepositoryId: '1', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: '/var/lib/jenkins/workspace/java_app_cloud/target/*']], mavenCoordinate: [artifactId: '*', groupId: 'org', packaging: 'war', version: '1']]]
    }
    
    stage ('deploy')
