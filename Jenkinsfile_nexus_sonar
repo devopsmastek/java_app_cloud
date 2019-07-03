@@ -34,13 +34,13 @@ node
       
       stage('Publish') 
       {
-      nexusPublisher nexusInstanceId: '1', nexusRepositoryId: '1', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: '/var/lib/jenkins/workspace/java_app_cloud/target/myweb-0.0.5.war']], mavenCoordinate: [artifactId: 'myweb-0.0.5', groupId: 'myweb', packaging: 'war', version: '1']]]
+      nexusPublisher nexusInstanceId: '1', nexusRepositoryId: '1', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: '/var/lib/jenkins/workspace/java_app_cloud/target/myweb-1.${env.BUILD_NUMBER}']], mavenCoordinate: [artifactId: '1', groupId: 'java', packaging: 'war', version: '${env.BUILD_NUMBER}']]]
    }
    
    stage ('deploy')
           {
   
-    sh "cp /var/lib/jenkins/workspace/java_app_cloud_sonar/target/myweb-0.0.5.war /var/lib/tomcat8/webapps"
+    sh "cp /var/lib/jenkins/workspace/java_app_cloud_sonar/target/myweb-1${env.BUILD_NUMBER} /var/lib/tomcat8/webapps"
       
                }
 }
