@@ -52,7 +52,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 	
-	 <scope>provided</scope> <distributionManagement>
+	<!-- <scope>provided</scope> <distributionManagement>
 		 <snapshotRepository>
 		    <id>nexus</id>
 		    <url>http://13.234.120.40:9999/repository/maven-snapshots/</url>
@@ -62,7 +62,7 @@
 		    <id>1</id>
 		    <url>http://13.234.120.40:9999/nexus/content/repositories/1/</url>
 		</repository>
-  	</distributionManagement>
+  	</distributionManagement> -->
 	
  <!-- <build>
     <plugins>
