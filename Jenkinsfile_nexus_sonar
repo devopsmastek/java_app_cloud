@@ -1,18 +1,5 @@
 node 
 {   
-   environment {
-        // This can be nexus3 or nexus2
-        NEXUS_VERSION = "2.14.13"
-        // This can be http or https
-        NEXUS_PROTOCOL = "http"
-        // Where your Nexus is running
-        NEXUS_URL = "http://13.234.120.40:9999/nexus"
-        // Repository where we will upload the artifact
-        NEXUS_REPOSITORY = "java_app"
-        // Jenkins credential id to authenticate to Nexus OSS
-        NEXUS_CREDENTIAL_ID = "nexus"
-	}
-
 
                  
    def mvnHome
@@ -75,6 +62,11 @@ node
                     // Assign to a boolean response verifying If the artifact name exists
                     artifactExists = fileExists artifactPath;
 		   def NEXUS_VERSION = "2.14.13"
+		   def NEXUS_PROTOCOL = "http"
+		   def NEXUS_URL = "http://13.234.120.40:9999/nexus"
+		   def NEXUS_REPOSITORY = "java_app"
+		   def NEXUS_CREDENTIAL_ID = "nexus"
+		   def 
                     if(artifactExists) {
                         echo "*** File: ${artifactPath}, group: ${pom.groupId}, packaging: ${pom.packaging}, version ${pom.version}";
                         nexusArtifactUploader(
