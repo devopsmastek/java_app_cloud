@@ -2,11 +2,11 @@ node
 {   
    environment {
         // This can be nexus3 or nexus2
-        NEXUS_VERSION = "nexus2"
+        NEXUS_VERSION = "2.14.13"
         // This can be http or https
         NEXUS_PROTOCOL = "http"
         // Where your Nexus is running
-        NEXUS_URL = "http://13.234.120.40:9999"
+        NEXUS_URL = "http://13.234.120.40:9999/nexus"
         // Repository where we will upload the artifact
         NEXUS_REPOSITORY = "java_app"
         // Jenkins credential id to authenticate to Nexus OSS
