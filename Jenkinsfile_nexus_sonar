@@ -63,7 +63,7 @@ node
                     artifactExists = fileExists artifactPath;
 		   def NEXUS_VERSION = "2.14.13"
 		   def NEXUS_PROTOCOL = "http"
-		   def NEXUS_URL = "http://13.234.120.40:9999"
+		   def NEXUS_URL = "13.234.120.40:9999"
 		   def NEXUS_REPOSITORY = "java_app"
 		   def NEXUS_CREDENTIAL_ID = "nexus"
 		   echo " akshay path is : $artifactPath"
