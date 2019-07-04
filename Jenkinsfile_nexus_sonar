@@ -48,6 +48,8 @@ node
         NEXUS_REPOSITORY = "java_app"
         // Jenkins credential id to authenticate to Nexus OSS
         NEXUS_CREDENTIAL_ID = "nexus"
+	BUILT_ID = "${env.BUILD_NUMBER}"
+	
 	}
 	    
 	    pom = readMavenPom file: "pom.xml";
@@ -61,7 +63,7 @@ node
                     artifactExists = fileExists artifactPath;
 		    
     nexusArtifactUploader artifacts:
-				[[artifactId: '${env.BUILD_NUMBER}',
+				[[artifactId: pom.artifactId + "$BUILT_ID",
 				classifier: '',
 				file: artifactPath, 
 				type: pom.packaging]],
