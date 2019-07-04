@@ -50,7 +50,7 @@ node
         NEXUS_CREDENTIAL_ID = "nexus"
 	}
 	    
-    nexusArtifactUploader artifacts: [[artifactId: 'myweb', classifier: '', file: '/var/lib/jenkins/workspace/java_app_cloud_sonar/target/myweb-1.1.war', type: 'war']], credentialsId: 'nexus', groupId: 'in.javahome', nexusUrl: '13.127.210.139', nexusVersion: 'nexus2', protocol: 'http', repository: 'java_app', version: '1.1' 
+    nexusArtifactUploader artifacts: [[artifactId: 'myweb', classifier: '', file: '/var/lib/jenkins/workspace/java_app_cloud_sonar/target/myweb-1.1.war', type: 'war']], credentialsId: 'nexus', groupId: 'in.javahome', nexusUrl: '13.127.210.139:9999/nexus', nexusVersion: 'nexus2', protocol: 'http', repository: 'java_app', version: '1.1'
         }
       
      
