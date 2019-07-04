@@ -64,7 +64,7 @@ node
 		    
     nexusArtifactUploader artifacts:
 				[[artifactId: pom.artifactId ,
-				classifier: "${env.BUILD_NUMBER}", 
+				classifier: ${env.BUILD_NUMBER}, 
 				file: artifactPath, 
 				type: pom.packaging]],
 				credentialsId: 'nexus', 
