@@ -65,7 +65,7 @@ node
     nexusArtifactUploader artifacts:
 				[[artifactId: pom.artifactId ,
 				classifier: '', 
-				file: artifactPath, 
+				file: "target/${pom.artifactId}-${pom.version}.${pom.packaging}", 
 				type: pom.packaging]],
 				credentialsId: 'nexus', 
 				groupId: pom.groupId,
@@ -73,7 +73,7 @@ node
 				nexusVersion: 'nexus2',
 				protocol: 'http', 
 				repository: 'java_app',
-				version: '${env.BUILD_NUMBER}'
+				version: "${pom.version}"
         }
       
      
