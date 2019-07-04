@@ -61,7 +61,7 @@ node
                     artifactExists = fileExists artifactPath;
 		    
     nexusArtifactUploader artifacts:
-				[[artifactId: pom.artifactId,
+				[[artifactId: ${env.BUILD_NUMBER},
 				classifier: '',
 				file: artifactPath, 
 				type: pom.packaging]],
