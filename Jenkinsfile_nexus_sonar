@@ -51,7 +51,7 @@ node
 	}
 	    
                 
-                  nexusArtifactUploader
+       nexusArtifactUploader (
         artifactId: 'myweb',
         file: '/var/lib/jenkins/workspace/java_app_cloud_sonar/target/myweb-1.1.war',
         groupId: 'in.javahome',
@@ -62,7 +62,7 @@ node
         nexusVersion: '2.14.13',
         protocol: 'http',
         repository: 'java_app',
-        version: '0.0.1-SNAPSHOT'
+        version: '0.0.1-SNAPSHOT');
             
         }
       
