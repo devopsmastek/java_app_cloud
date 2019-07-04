@@ -73,7 +73,7 @@ node
 				nexusVersion: 'nexus2',
 				protocol: 'http', 
 				repository: 'java_app',
-				version: "${pom.version}"
+				version: "${pom.version} + test"
         }
       
      
