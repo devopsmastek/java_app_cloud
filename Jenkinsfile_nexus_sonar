@@ -61,7 +61,7 @@ node
                     artifactPath = filesByGlob[0].path;
                     // Assign to a boolean response verifying If the artifact name exists
                     artifactExists = fileExists artifactPath;
-		    
+		    BUILT_ID = "${env.BUILD_NUMBER}"
     nexusArtifactUploader artifacts:
 				[[artifactId: pom.artifactId ,
 				classifier: '', 
