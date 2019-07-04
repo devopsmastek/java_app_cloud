@@ -65,7 +65,7 @@ node
     nexusArtifactUploader artifacts:
 				[[artifactId: pom.artifactId ,
 				classifier: '', 
-				file: "target/${pom.artifactId}-${pom.version}.${pom.packaging}", 
+				file: artifactPath, 
 				type: pom.packaging]],
 				credentialsId: 'nexus', 
 				groupId: pom.groupId,
