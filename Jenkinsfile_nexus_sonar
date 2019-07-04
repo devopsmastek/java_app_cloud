@@ -43,7 +43,7 @@ node
         // This can be http or https
         NEXUS_PROTOCOL = "http"
         // Where your Nexus is running
-        NEXUS_URL = "13.234.120.40:9999"
+        NEXUS_URL = "13.127.210.139:9999"
         // Repository where we will upload the artifact
         NEXUS_REPOSITORY = "java_app"
         // Jenkins credential id to authenticate to Nexus OSS
@@ -63,7 +63,7 @@ node
                     artifactExists = fileExists artifactPath;
 		   def NEXUS_VERSION = "2.14.13"
 		   def NEXUS_PROTOCOL = "http"
-		   def NEXUS_URL = "13.234.120.40:9999"
+		   def NEXUS_URL = "13.127.210.139:9999"
 		   def NEXUS_REPOSITORY = "java_app"
 		   def NEXUS_CREDENTIAL_ID = "nexus"
 		   NEXUS_CREDENTIAL_ID = "nexus"
